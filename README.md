@@ -1,41 +1,47 @@
-Here’s a polished `README.md` you can use for your **React + Vite Devfolio project**. I’ve written it in a way that works both for you and anyone else who wants to use it as a template:
-
-```markdown
 # Devfolio 🚀
 
-A simple and customizable developer portfolio built with **React + Vite**.  
-I originally built this to showcase my own **About Me, Work Experience, Skills, and Projects**, but I decided to make it public so anyone can use it as a starting point for their own portfolio.
+A simple, fast, and customizable **developer portfolio** built with **React + Vite + TypeScript + React Router**.  
+I created this to showcase my **About Me, Work Experience, Skills, and Projects**, and decided to open-source it so anyone can use it as a template for their own portfolio.
 
 ---
 
 ## ✨ Features
-- ⚡ **Fast and lightweight** – powered by Vite
-- 🎨 **Responsive design** – looks good on desktop and mobile
-- 🛠️ **Easy to customize** – update content from a few files
-- 📂 **Modular structure** – clean separation of components
-- 🚀 **Deploy anywhere** – GitHub Pages, Vercel, Netlify, etc.
-
----
-
-## 🖼️ Demo
-[Live Demo](#) <!-- replace with your deployed link -->
+- ⚡ **Fast build and HMR** with Vite
+- 🎨 **Responsive design** – mobile & desktop ready
+- 🗂️ **Modular content structure** – About Me, Work Experience, Skills, Projects
+- 🔗 **Dynamic routing** via React Router
+- 🐳 **Docker support** for easy containerized deployment
+- 🚀 Deployable anywhere (GitHub Pages, Vercel, Netlify, etc.)
 
 ---
 
 ## 📂 Project Structure
 ```
 
-devfolio/
-├── public/             # Static assets
-├── src/
-│   ├── components/     # Reusable UI components
-│   ├── sections/       # About, Work Experience, Skills, Projects
-│   ├── data/           # Centralized content for easy editing
-│   ├── App.jsx         # Root component
-│   └── main.jsx        # Entry point
-├── index.html
+aryan\_dev\_portfolio/
+├── .dockerignore
+├── .gitignore
+├── Dockerfile
+├── README.md
+├── app/
+│   ├── app.css
+│   ├── content/
+│   │   ├── AboutMe/        # About section
+│   │   ├── Misc/           # Miscellaneous section
+│   │   ├── Projects/       # Projects showcase
+│   │   ├── Skills/         # Skills listing
+│   │   ├── WorkEx/         # Work experience
+│   │   └── reusable/       # Reusable UI components
+│   ├── landing/            # Landing page components
+│   ├── routes/             # Route definitions
+│   ├── root.tsx            # App root
+│   └── routes.ts           # Routing config
+├── public/                 # Static assets
+├── react-router.config.ts
+├── tsconfig.json
+├── vite.config.ts
 ├── package.json
-└── vite.config.js
+└── package-lock.json
 
 ````
 
@@ -45,8 +51,8 @@ devfolio/
 
 ### 1. Clone the repo
 ```bash
-git clone https://github.com/<your-username>/devfolio.git
-cd devfolio
+git clone https://github.com/chanchanmano/aryan_dev_portfolio.git
+cd aryan_dev_portfolio
 ````
 
 ### 2. Install dependencies
@@ -67,18 +73,25 @@ npm run dev
 npm run build
 ```
 
+### 5. Preview production build
+
+```bash
+npm run preview
+```
+
 ---
 
 ## 🎨 Customization
 
-All the portfolio content (About Me, Work Experience, Skills, and Projects) is defined in the `src/data/` folder.
+All portfolio content is modular and organized under the `app/content/` folder.
 
-* **About Me** → `about.js`
-* **Work Experience** → `work.js`
-* **Skills** → `skills.js`
-* **Projects** → `projects.js`
+* **About Me** → `app/content/AboutMe/`
+* **Work Experience** → `app/content/WorkEx/`
+* **Skills** → `app/content/Skills/`
+* **Projects** → `app/content/Projects/`
+* **Landing Page** → `app/landing/`
 
-Just edit these files to reflect your details. You can also tweak styling in the components for further personalization.
+Update the constants, text, and styles in these directories to personalize your portfolio.
 
 ---
 
@@ -86,9 +99,10 @@ Just edit these files to reflect your details. You can also tweak styling in the
 
 This project works out of the box with:
 
-* **GitHub Pages**
 * **Vercel**
 * **Netlify**
+* **GitHub Pages**
+* **Dockerized servers**
 
 For GitHub Pages:
 
@@ -96,24 +110,22 @@ For GitHub Pages:
 npm run build
 ```
 
-Push the `dist/` folder to a `gh-pages` branch or configure GitHub Actions.
+Then serve the `dist/` folder.
 
 ---
 
 ## 🤝 Contributing
 
-This is mainly a personal template, but feel free to fork it and create pull requests if you add something cool!
+This is primarily a template, but feel free to fork and extend it. PRs are welcome if you add cool features or improvements!
 
 ---
 
 ## 📜 License
 
-MIT License © \[Your Name]
+MIT License © \ARYAN HAMINE
 Free to use, modify, and share.
 
 ---
 
-```
+---
 
-Would you like me to also add a **screenshot + preview GIF** section (to make the repo more attractive), or keep it lean and text-only?
-```
