@@ -50,7 +50,7 @@ export default function DetailCard() {
           >
             healthcare and technology
           </span>
-          , and I’m currently doing my Master’s in Computer Science at{" "}
+          , and I’m currently doing my Masters in Computer Science at{" "}
           <span className={funkyFonts ? "font-architect text-amber-300" : ""}>
             UC Davis
           </span>
