@@ -16,11 +16,12 @@ export const PROJECTS = [
     icons: [Python, MySQL],
   },
   {
-    title: "Metflix – Netflix Clone",
-    content: `Built a Netflix clone with ReactJS and Firebase featuring genre-based browsing, trailer previews, and dynamic title updates via integrated APIs. Used MERN stack with Firebase for deployment.`,
-    expandedContent: `Developed Metflix, a full-stack Netflix clone using ReactJS and Firebase, replicating key features of the original platform. The app supports genre-based content filtering, trailer previews for all titles, and real-time content updates through integrated APIs. Implemented using the MERN stack (MongoDB, Express, React, Node.js), with Firebase handling deployment. The project demonstrates frontend design, backend integration, and API handling to deliver a smooth, responsive user experience similar to modern OTT platforms.`,
+    title: "A.L.A.N (Advanced Logic and Associative Neural-net)",
+    content: `Built a modular assistant prototype with wake word detection (Porcupine), speech-to-text (Whisper), text-to-speech (Edge TTS), and LLM-based response generation (Groq Mixtral via LangChain), and session-based memory.`,
+    expandedContent: `Designed an extensible architecture using ports/adapters to allow future swap-in of different STT, TTS, and wake word engines. Long-term goal: extend ALAN with self-triggering routines (e.g., reminders, notes, autonomous task checks) and a persistent memory layer.`,
     icons: [MongoDB, NodeJs, React],
   },
+
 
 //   {
 //     title: "",
