@@ -1,13 +1,13 @@
+import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
 
-const dynamicTitles: string[] = [
+const dynamicTitles = [
   "Software Engineer",
+  "Backend Builder",
   "Full Stack Developer",
-  "Backend Developer",
-  "Problem-Solver",
-  "Tennis Enthusiast",
-  "Life Student",
+  "System Thinker",
+  "Problem Solver",
+  "Lifelong Student",
 ];
 
 function DynamicTitle() {
@@ -16,22 +16,26 @@ function DynamicTitle() {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prevIndex) => (prevIndex + 1) % dynamicTitles.length);
-    }, 3000);
+    }, 2800);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <motion.p
-      key={activeIndex} // Ensures animation runs when text changes
-      className="ml-8 text-6xl"
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -10 }}
-      transition={{ duration: 0.8, ease: "easeInOut" }}
-    >
-      {dynamicTitles[activeIndex]}
-    </motion.p>
+    <div className="min-h-[3.5rem]" aria-live="polite">
+      <AnimatePresence mode="wait">
+        <motion.p
+          key={activeIndex}
+          className="text-3xl font-semibold tracking-[-0.05em] sm:text-4xl lg:text-5xl"
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -14 }}
+          transition={{ duration: 0.45, ease: "easeInOut" }}
+        >
+          {dynamicTitles[activeIndex]}
+        </motion.p>
+      </AnimatePresence>
+    </div>
   );
 }
 

@@ -1,31 +1,32 @@
-import styles from "./styles.module.css"
-import classNames from "classnames/bind";
+import type { Project } from "./constants";
 
+type ProjectCardProps = {
+  project: Project;
+};
 
-const cx = classNames.bind(styles)
+function ProjectCard({ project }: ProjectCardProps) {
+  return (
+    <article className="surface-card flex h-full flex-col justify-between gap-8 p-6 sm:p-8">
+      <div className="space-y-4">
+        <p className="page-eyebrow">Selected Project</p>
+        <h3 className="text-2xl font-semibold tracking-[-0.05em]">
+          {project.title}
+        </h3>
+        <p className="page-copy max-w-none text-[1rem]">{project.content}</p>
+        <p className="page-copy max-w-none text-[0.98rem]">
+          {project.expandedContent}
+        </p>
+      </div>
 
-function ProjectCard({ title="", content="", expandedContent="", icons=[]}) {
-    return (
-        <div className={`flex flex-col ${cx("project-card")} w-1/4 p-10 space-y-10 rounded-lg justify-between`}>
-            <div className="font-extrabold">
-                {/* title */}
-                {title}
-            </div>
-            <div className="">
-                {/* short content */}
-                {content}
-            </div>
-            <div>
-                {/* tech used */}
-                <div className="flex space-x-5">
-                {icons.map((Icon, index)=>{
-                    // @ts-ignore
-                    return <Icon size={28} key={index}/>
-                })}
-                </div>
-            </div>
-        </div>
-    );
+      <div className="flex flex-wrap gap-3">
+        {project.icons.map((Icon, index) => (
+          <span key={`${project.title}-${index}`} className="icon-pill">
+            <Icon size={20} />
+          </span>
+        ))}
+      </div>
+    </article>
+  );
 }
 
 export default ProjectCard;

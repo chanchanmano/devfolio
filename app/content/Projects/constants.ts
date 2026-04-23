@@ -1,32 +1,46 @@
-import { Bing, MongoDB, MySQL, NodeJs, Python, React, Solidity } from "developer-icons";
+import type { ComponentType } from "react";
+import {
+  Django,
+  Docker,
+  MongoDB,
+  NodeJs,
+  PostgreSQL,
+  React,
+  Solidity,
+} from "developer-icons";
 
-export const PROJECTS = [
+export type IconComponent = ComponentType<Record<string, unknown>>;
+
+export type Project = {
+  title: string;
+  content: string;
+  expandedContent: string;
+  icons: IconComponent[];
+};
+
+export const PROJECTS: Project[] = [
   {
-    title: "Drug Supply Chain on Decentralized Network",
+    title: "Drug Supply Chain Tracking on a Decentralized Network",
     content:
-      "Web3 App using React, Node.js & Solidity to secure drug supply chains; awarded Best Project at college and published in IJEECS (2024) for its impact on combating counterfeit drugs.",
-    expandedContent: `Developed a decentralized web3 application to secure drug supply chains using React, Node.js, and Solidity. Designed smart contracts for tamper-proof tracking and integrated MetaMask, Ganache, and MongoDB. The system improves transparency and reduces counterfeit risks in pharmaceutical logistics. Recognized as Best Project by MMCOE’s IT Department in 2023. Published in the Indonesian Journal of Electrical Engineering and Computer Science (Vol. 33, Issue 1, 2024).`,
+      "A React and Node.js-based web3 application for securing the movement of goods across a drug supply chain with multiple real-world participants.",
+    expandedContent:
+      "I led smart contract development in Solidity, built backend logic in Node.js, designed the MongoDB schema, and later published the work in the Indonesian Journal of Electrical Engineering and Computer Science in January 2024.",
     icons: [NodeJs, React, Solidity, MongoDB],
   },
   {
-    title: "QR-Based Healthcare Access System",
-    content: `Developed a QR-based system to simplify hospital admissions by bypassing manual registration steps. Built using Python, Tkinter, OpenCV, and SQLite for fast and efficient patient intake.`,
-    expandedContent: `
-    Built a QR-based healthcare access system to streamline patient registration at hospitals and clinics. The system eliminates time-consuming clerical procedures by enabling patients to check in using scannable QR codes, ensuring faster access to medical attention. Developed using Python, with a GUI built in Tkinter, and integrated with OpenCV for QR code scanning and SQLite for backend data management. The project emphasizes improving operational efficiency in healthcare settings through simple, effective tech solutions.`,
-    icons: [Python, MySQL],
-  },
-  {
-    title: "A.L.A.N (Advanced Logic and Associative Neural-net)",
-    content: `Built a modular assistant prototype with wake word detection (Porcupine), speech-to-text (Whisper), text-to-speech (Edge TTS), and LLM-based response generation (Groq Mixtral via LangChain), and session-based memory.`,
-    expandedContent: `Designed an extensible architecture using ports/adapters to allow future swap-in of different STT, TTS, and wake word engines. Long-term goal: extend ALAN with self-triggering routines (e.g., reminders, notes, autonomous task checks) and a persistent memory layer.`,
+    title: "A.L.A.N",
+    content:
+      "A modular assistant prototype with wake word detection, speech-to-text, text-to-speech, Groq Mixtral-based responses, and session memory.",
+    expandedContent:
+      "The architecture uses ports and adapters so STT, TTS, and wake-word engines can be swapped independently, while leaving room for autonomous routines such as reminders, notes, and self-triggered tasks.",
     icons: [MongoDB, NodeJs, React],
   },
-
-
-//   {
-//     title: "",
-//     content: "content",
-//     expandedContent: "",
-//     icons: [],
-//   },
+  {
+    title: "SmashingBugs",
+    content:
+      "A ticket tracking platform for organizations with JWT authentication, role-based access control, and modular REST APIs.",
+    expandedContent:
+      "Built with Django REST Framework, PostgreSQL, Docker Compose, and a responsive ReactJS frontend for real-time ticket management across isolated, reproducible environments.",
+    icons: [Django, Docker, PostgreSQL, React],
+  },
 ];

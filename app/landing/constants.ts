@@ -13,26 +13,28 @@ export const SOCIAL_LINKS = [
 
 
 export const NAVBAR_SECTIONS = [
-    {
-        text:"about me",
-        link:"aboutme"
-    },
-    {
-        text:"work-ex",
-        link:"workex"
-    },
-    {
-        text:"skills",
-        link:"skills"
-    },
-    {
-        text:"projects",
-        link:"projects"
-    },
-    // {
-    //     text:"cool stuff",
-    //     link:"misc"
-    // },
-
-]
-
+  {
+    text: "overview",
+    link: "",
+  },
+  {
+    text: "about",
+    link: "aboutme",
+  },
+  {
+    text: "experience",
+    link: "workex",
+  },
+  {
+    text: "blog",
+    link: "blog",
+  },
+  {
+    text: "skills",
+    link: "skills",
+  },
+  {
+    text: "projects",
+    link: "projects",
+  },
+];

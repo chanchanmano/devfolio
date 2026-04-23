@@ -3,10 +3,18 @@ import { SOCIAL_LINKS as socialLinks } from "./constants";
 
 function SocialLinks() {
   return (
-    <div className="flex space-x-18">
+    <div className="flex flex-wrap gap-3">
       {socialLinks.map((social, index) => (
-        <a key={index} href={social.url} target="_blank" rel="noopener noreferrer" aria-label={social.label}>
-          <FontAwesomeIcon icon={social.icon} className="text-6xl hover:text-blue-200 transition-colors duration-300" />
+        <a
+          key={index}
+          href={social.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={social.label}
+          className="label-chip"
+        >
+          <FontAwesomeIcon icon={social.icon} className="text-sm" />
+          <span>{social.label}</span>
         </a>
       ))}
     </div>

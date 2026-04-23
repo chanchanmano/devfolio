@@ -10,6 +10,22 @@ import {
 import type { Route } from "./+types/root";
 import "./app.css";
 
+const themeInitScript = `
+(() => {
+  const storageKey = "aryan.dev.theme";
+  const storedTheme = window.localStorage.getItem(storageKey);
+  const systemTheme = window.matchMedia("(prefers-color-scheme: light)").matches
+    ? "light"
+    : "dark";
+  const theme = storedTheme === "light" || storedTheme === "dark"
+    ? storedTheme
+    : systemTheme;
+
+  document.documentElement.dataset.theme = theme;
+  document.documentElement.style.colorScheme = theme;
+})();
+`;
+
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
   {
@@ -19,16 +35,17 @@ export const links: Route.LinksFunction = () => [
   },
   {
     rel: "stylesheet",
-    href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
+    href: "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap",
   },
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" data-theme="dark" suppressHydrationWarning>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         <Meta />
         <Links />
       </head>
@@ -62,11 +79,14 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
   }
 
   return (
-    <main className="pt-16 p-4 container mx-auto">
-      <h1>{message}</h1>
-      <p>{details}</p>
+    <main className="app-shell py-10">
+      <div className="surface-card space-y-4 p-8">
+        <p className="page-eyebrow">Application Error</p>
+        <h1 className="text-3xl font-semibold tracking-[-0.04em]">{message}</h1>
+        <p className="page-copy max-w-none">{details}</p>
+      </div>
       {stack && (
-        <pre className="w-full p-4 overflow-x-auto">
+        <pre className="surface-card mt-4 w-full overflow-x-auto p-6 text-sm">
           <code>{stack}</code>
         </pre>
       )}

@@ -1,3 +1,4 @@
+import type { ComponentType } from "react";
 import {
   AWS,
   Django,
@@ -5,66 +6,67 @@ import {
   Elastic,
   Electron,
   ExpressJsLight,
-  FastAPI,
   Git,
-  HTML5,
   Java,
   JavaScript,
-  JQuery,
-  Kibana,
   MongoDB,
   MySQL,
   NodeJs,
-  Postman,
+  PostgreSQL,
   Python,
   React,
-  ReactRouter,
   Redis,
   Solidity,
   TypeScript,
 } from "developer-icons";
 
-export const SKILLS_DETAILS = [
+export type IconComponent = ComponentType<Record<string, unknown>>;
+
+export type SkillGroup = {
+  skillCategory: string;
+  toolIcons: Array<{
+    Icon: IconComponent;
+    name: string;
+  }>;
+};
+
+export const SKILLS_DETAILS: SkillGroup[] = [
   {
-    skillCategory: "Languages",
+    skillCategory: "Programming Languages",
     toolIcons: [
       { Icon: Python, name: "Python" },
+      { Icon: JavaScript, name: "JavaScript" },
+      { Icon: TypeScript, name: "TypeScript" },
       { Icon: Java, name: "Java" },
       { Icon: Solidity, name: "Solidity" },
-      { Icon: JavaScript, name: "JavaScript" },
-      { Icon: HTML5, name: "HTML5" },
     ],
   },
   {
-    skillCategory: "Backend",
+    skillCategory: "Frameworks",
     toolIcons: [
       { Icon: Django, name: "Django" },
-      { Icon: FastAPI, name: "FastAPI" },
       { Icon: NodeJs, name: "Node.js" },
-      { Icon: ExpressJsLight, name: "Express.js" },
-    ],
-  },
-  {
-    skillCategory: "Frontend",
-    toolIcons: [
-      { Icon: React, name: "React" },
       { Icon: Electron, name: "Electron" },
-      { Icon: TypeScript, name: "TypeScript" },
-      { Icon: JQuery, name: "jQuery" },
+      { Icon: ExpressJsLight, name: "Express" },
+      { Icon: React, name: "ReactJS" },
     ],
   },
   {
-    skillCategory: "Other Tech",
+    skillCategory: "Database Technologies",
     toolIcons: [
       { Icon: MySQL, name: "MySQL" },
+      { Icon: PostgreSQL, name: "PostgreSQL" },
       { Icon: MongoDB, name: "MongoDB" },
       { Icon: Redis, name: "Redis" },
-      { Icon: AWS, name: "AWS" },
-      { Icon: Git, name: "Git" },
       { Icon: Elastic, name: "Elasticsearch" },
+    ],
+  },
+  {
+    skillCategory: "Cloud & DevOps",
+    toolIcons: [
+      { Icon: AWS, name: "AWS (S3, Lambda)" },
       { Icon: Docker, name: "Docker" },
-      { Icon: Postman, name: "Postman" },
-      { Icon: Kibana, name: "Kibana" },
+      { Icon: Git, name: "Git / GitHub" },
     ],
   },
 ];
