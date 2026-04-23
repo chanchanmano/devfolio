@@ -12,4 +12,8 @@ export default [
     route("workex", "./content/WorkEx/WorkEx.tsx"),
     route("misc", "./content/Misc/Misc.tsx"),
   ]),
+  route("writing", "./routes/blog-reader.tsx", [
+    index("./routes/writing-index.tsx"),
+    route(":slug", "./routes/writing-article.tsx"),
+  ]),
 ] satisfies RouteConfig;

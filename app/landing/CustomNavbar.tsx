@@ -2,7 +2,24 @@ import { Link, NavLink } from "react-router";
 import { NAVBAR_SECTIONS } from "./constants";
 import ThemeToggle from "./ThemeToggle";
 
-function CustomNavbar() {
+type NavbarSection = {
+  text: string;
+  link: string;
+};
+
+type CustomNavbarProps = {
+  sections?: NavbarSection[];
+};
+
+function resolveLink(link: string) {
+  if (!link) {
+    return "/";
+  }
+
+  return link.startsWith("/") ? link : `/${link}`;
+}
+
+function CustomNavbar({ sections = NAVBAR_SECTIONS }: CustomNavbarProps) {
   return (
     <header className="topbar">
       <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
@@ -20,10 +37,10 @@ function CustomNavbar() {
 
         <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:gap-5">
           <nav className="flex gap-2 overflow-x-auto pb-1">
-            {NAVBAR_SECTIONS.map((navbarElement) => (
+            {sections.map((navbarElement) => (
               <NavLink
                 key={navbarElement.link || "home"}
-                to={navbarElement.link ? `/${navbarElement.link}` : "/"}
+                to={resolveLink(navbarElement.link)}
                 end={!navbarElement.link}
                 className={({ isActive }) =>
                   `nav-link whitespace-nowrap ${isActive ? "active" : ""}`

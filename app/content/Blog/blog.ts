@@ -229,3 +229,7 @@ export function canUseLocalBlogEditor(request: Request) {
 
   return import.meta.env.DEV || hostname === "localhost" || hostname === "127.0.0.1" || hostname === "::1";
 }
+
+export function getBlogBasePath(pathname: string) {
+  return pathname.startsWith("/writing") ? "/writing" : "/blog";
+}

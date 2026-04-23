@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import { Link, useLoaderData } from "react-router";
+import { Link, useLoaderData, useLocation } from "react-router";
 import MarkdownArticle from "./MarkdownArticle";
-import { formatBlogDate, getBlogPostBySlug } from "./blog";
+import { formatBlogDate, getBlogBasePath, getBlogPostBySlug } from "./blog";
 
 export async function loader({ params }: { params: { slug?: string } }) {
   const slug = params.slug;
@@ -21,6 +21,8 @@ export async function loader({ params }: { params: { slug?: string } }) {
 
 function BlogArticle() {
   const { post } = useLoaderData<typeof loader>();
+  const { pathname } = useLocation();
+  const blogBasePath = getBlogBasePath(pathname);
 
   return (
     <motion.article
@@ -31,7 +33,10 @@ function BlogArticle() {
       className="article-shell space-y-8"
     >
       <div className="space-y-5">
-        <Link to="/blog" className="page-eyebrow inline-flex hover:opacity-80">
+        <Link
+          to={blogBasePath}
+          className="page-eyebrow inline-flex hover:opacity-80"
+        >
           Back to blog
         </Link>
         <div className="space-y-4">
