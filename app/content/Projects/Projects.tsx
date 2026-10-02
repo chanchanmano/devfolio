@@ -17,8 +17,9 @@ function Projects() {
           Work centered on reliability, real users, and operational clarity.
         </h2>
         <p className="page-copy">
-          A mix of healthcare-oriented products, systems experiments, and tools
-          built to make difficult workflows simpler to trust and maintain.
+          A mix of agentic AI research, healthcare-oriented products, systems
+          experiments, and tools built to make difficult workflows simpler to
+          trust and maintain.
         </p>
       </div>
 

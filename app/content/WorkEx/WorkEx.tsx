@@ -3,7 +3,9 @@ import {
   AWS,
   Django,
   Docker,
+  Elastic,
   ExpressJsLight,
+  Git,
   HTML5,
   JavaScript,
   MongoDB,
@@ -28,6 +30,17 @@ type WorkExperience = {
 
 const workExperience: WorkExperience[] = [
   {
+    company: "SAP, Palo Alto, CA, USA",
+    role: "AI Software Developer Intern",
+    duration: "July 2026 - September 2026",
+    skills: [Python, Git],
+    description: [
+      "Architected an autonomous LangGraph batch notification pipeline on the Joule learning assistant that processes learner data uploads through a two-tier orchestration graph, handles each learner in parallel, and reliably delivers notifications through a retry-backed sender with exponential backoff.",
+      "Designed a reusable memory framework on HANA Cloud that gives the AI agent persistent, tenant-isolated storage with content-hash keying and freshness control, exposed through LangChain tools for cross-conversation recall of user preferences.",
+      "Raised the agent's automated test pass rate from 16% to 94% by fixing cases blocking the CI/CD pipeline, benchmarked frontier models, and hardened safety guardrails against out-of-scope responses by reworking the system prompt.",
+    ],
+  },
+  {
     company: "CrelioHealth, Pune, India",
     role: "Software Engineer (SDE-II)",
     duration: "April 2023 - August 2025",
@@ -35,6 +48,7 @@ const workExperience: WorkExperience[] = [
       AWS,
       Django,
       Docker,
+      Elastic,
       JavaScript,
       MySQL,
       MongoDB,
@@ -44,7 +58,7 @@ const workExperience: WorkExperience[] = [
       Redis,
     ],
     description: [
-      "Engineered Storage Manager, a unified Django REST service handling 1M+ uploads with Elasticsearch indexing and MySQL-based job tracking, delivering roughly 40% faster throughput and full upload traceability.",
+      "Engineered Storage Manager, a unified Django REST service handling 1M+ uploads with Elasticsearch indexing and MySQL-based lab tracking, delivering roughly 40% faster throughput and full upload traceability.",
       "Enabled 10k+ patients per month to access medical imaging and reduced support tickets by 30% by shipping a secure PACS/DICOM sharing portal with authenticated links and audit logs.",
       "Eliminated manual webhook recovery and improved integration reliability by 95%, saving 20+ engineer-hours weekly, by replacing Mirth retry workflows with a Django-DocumentDB dashboard and AWS EventBridge-powered auto-retry flows.",
       "Reduced billing errors and removed manual steps by automating reflex-testing rules over MySQL and caching thresholds in Redis for real-time evaluation.",
@@ -75,13 +89,14 @@ const WorkExperienceTimeline = () => {
       <div className="space-y-4">
         <p className="page-eyebrow">Experience</p>
         <h2 className="page-heading max-w-4xl">
-          Shipping software for lab operators, internal teams, and everyday
-          product workflows.
+          Shipping agentic AI systems, healthcare tooling, and full-stack
+          products that stay stable under real load.
         </h2>
         <p className="page-copy">
-          My recent experience has been shaped by healthcare tooling,
-          automation, and full-stack delivery in systems that need to be stable
-          under real operational pressure.
+          My recent experience spans agent memory, notification, and
+          evaluation systems for SAP&apos;s Joule assistant, alongside
+          healthcare tooling, automation, and full-stack delivery in systems
+          that need to be stable under real operational pressure.
         </p>
       </div>
 

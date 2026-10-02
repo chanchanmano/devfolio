@@ -28,7 +28,7 @@ function Skills() {
             <div className="mt-5 flex flex-wrap gap-3">
               {skill.toolIcons.map(({ Icon, name }) => (
                 <div key={name} className="label-chip">
-                  <Icon size={18} />
+                  {Icon ? <Icon size={18} /> : null}
                   <span>{name}</span>
                 </div>
               ))}

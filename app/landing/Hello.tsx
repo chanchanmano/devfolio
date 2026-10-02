@@ -9,15 +9,19 @@ const QUICK_FACTS = [
   },
   {
     label: "Experience",
-    value: "2.5 years building production-scale SaaS.",
+    value: "2.5 years building production-scale SaaS, plus an AI Software Developer internship at SAP.",
   },
   {
     label: "Graduate study",
-    value: "M.S. in Computer Science at UC Davis, expected June 2027.",
+    value: "M.S. in Computer Science at UC Davis (GPA 3.85/4), expected June 2027.",
   },
   {
     label: "Core stack",
-    value: "Python, Django, Node.js, React, PostgreSQL, Redis, Docker.",
+    value: "Python, Django, Node.js, React, LangChain, LangGraph, PostgreSQL, Redis, Docker.",
+  },
+  {
+    label: "Open source",
+    value: "Contributor to Apache ResilientDB, a top-level Apache project named among the ASF's top projects this year.",
   },
 ];
 
@@ -26,17 +30,24 @@ function Hello() {
     <section className="grid gap-8 lg:grid-cols-[minmax(0,1.35fr)_minmax(300px,0.65fr)] lg:items-end">
       <div className="space-y-10">
         <div className="space-y-6">
-          <p className="page-eyebrow">Software Engineer · Full Stack Developer · Davis, CA</p>
+          <p className="page-eyebrow">Software Engineer · Agentic AI · Davis, CA</p>
           <div className="space-y-4">
             <h1 className="page-title max-w-4xl">
               Building production software that stays reliable under real operational load.
             </h1>
             <p className="page-copy">
               I&apos;m Aryan Madhur Hamine, a UC Davis Computer Science graduate
-              student with 2.5 years of experience building SaaS products. My
-              work has centered on REST services, event-driven integrations,
-              data-intensive workflows, and full-stack applications using
-              Python, Django, Node.js, React, PostgreSQL, Redis, and Docker.
+              student with 2.5 years of experience shipping production
+              healthcare-tech SaaS. I built agent memory, notification, and
+              evaluation systems for SAP&apos;s Joule assistant, contribute to
+              Apache ResilientDB, which graduated from the Apache Incubator to
+              a top-level Apache project and was named among the ASF&apos;s top
+              projects this year, and I&apos;m researching real-time audio and
+              observability for agentic AI systems at UC Davis. My work spans
+              REST services, event-driven integrations, data-intensive
+              workflows, and full-stack applications using Python, Django,
+              Node.js, React, LangChain, LangGraph, PostgreSQL/MySQL, Redis,
+              Elasticsearch, and AWS.
             </p>
           </div>
         </div>

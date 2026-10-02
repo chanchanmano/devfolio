@@ -8,11 +8,11 @@ const PROFILE_DETAILS = [
   },
   {
     label: "Recent role",
-    value: "Software Engineer (SDE-II) at CrelioHealth from April 2023 to August 2025.",
+    value: "AI Software Developer Intern at SAP from July 2026 to September 2026, preceded by Software Engineer (SDE-II) at CrelioHealth from April 2023 to August 2025.",
   },
   {
     label: "Education",
-    value: "M.S. Computer Science at UC Davis; B.E. in Information Technology from MMCOE, Pune University.",
+    value: "M.S. Computer Science at UC Davis (GPA 3.85/4); B.E. in Information Technology from MMCOE, Pune University (GPA 3.7/4).",
   },
 ];
 

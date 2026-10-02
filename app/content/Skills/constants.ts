@@ -25,7 +25,7 @@ export type IconComponent = ComponentType<Record<string, unknown>>;
 export type SkillGroup = {
   skillCategory: string;
   toolIcons: Array<{
-    Icon: IconComponent;
+    Icon?: IconComponent;
     name: string;
   }>;
 };
@@ -49,6 +49,8 @@ export const SKILLS_DETAILS: SkillGroup[] = [
       { Icon: Electron, name: "Electron" },
       { Icon: ExpressJsLight, name: "Express" },
       { Icon: React, name: "ReactJS" },
+      { name: "LangChain" },
+      { name: "LangGraph" },
     ],
   },
   {
@@ -59,6 +61,7 @@ export const SKILLS_DETAILS: SkillGroup[] = [
       { Icon: MongoDB, name: "MongoDB" },
       { Icon: Redis, name: "Redis" },
       { Icon: Elastic, name: "Elasticsearch" },
+      { name: "ChromaDB" },
     ],
   },
   {

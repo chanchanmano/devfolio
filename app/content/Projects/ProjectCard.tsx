@@ -8,7 +8,7 @@ function ProjectCard({ project }: ProjectCardProps) {
   return (
     <article className="surface-card flex h-full flex-col justify-between gap-8 p-6 sm:p-8">
       <div className="space-y-4">
-        <p className="page-eyebrow">Selected Project</p>
+        <p className="page-eyebrow">{project.category}</p>
         <h3 className="text-2xl font-semibold tracking-[-0.05em]">
           {project.title}
         </h3>
